@@ -1,16 +1,30 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+class Grandparent:
+    height = 170
+    satiety = 100
+    age = 60
 
 
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
+class Parent(Grandparent):
+    age = 40
 
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+
+class Child(Parent):
+    height = 170
+    age = 14
+
+    def __init__(self):
+        print(self.height, self.satiety, self.age)
+
+
+class Monster:
+    ...
+
+
+me = Child()
+monster = Monster()
+
+for obj in (me, monster):
+    if isinstance(obj, Grandparent):
+        print("You are a human")
+    else:
+        print("You are a monster")
