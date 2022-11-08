@@ -1,3 +1,6 @@
+import requests
+
+
 class Grandparent:
     height = 170
     satiety = 100
@@ -16,15 +19,58 @@ class Child(Parent):
         print(self.height, self.satiety, self.age)
 
 
-class Monster:
+class Test:
+    def __hello(self):
+        return print("hello")
+
+    def _world(self):
+        return print('world')
+
+new = Test()
+
+# new._Test__hello();new._world()
+
+class Hello:
+    def __init__(self):
+        print("Hello")
+
+
+class Hello_World(Hello):
+    def __init__(self):
+        super().__init__()
+        print("world!")
+
+
+hello = Hello()
+helloworld = Hello_World()
+
+
+class Computer:
+    def calculate(self):
+        print(" 1+2=3 ")
+
+
+class Display:
+    def display(self):
+        print("-214=-12-0=1203=-345-2395=0923=-05692-3wokjed;lkasjf.mnewrnew")
+
+
+class Smartphone(Computer, Display):
     ...
 
 
-me = Child()
-monster = Monster()
+xiaomi = Smartphone()
+xiaomi.display()
+xiaomi.calculate()
 
-for obj in (me, monster):
-    if isinstance(obj, Grandparent):
-        print("You are a human")
-    else:
-        print("You are a monster")
+def first():
+    ...
+
+class Site:
+    ...
+
+TEST = Site
+
+import inspect
+
+print(inspect.isbuiltin(requests))
